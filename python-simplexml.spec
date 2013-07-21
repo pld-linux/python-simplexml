@@ -6,7 +6,7 @@ Summary:	Simplexml in Python
 Summary(pl.UTF-8):	simplexml w Pythonie
 Name:		python-%{module}
 Version:	0.6.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://www.fit.vutbr.cz/~smrcka/projects/simplexml/%{module}-%{version}.tar.gz
@@ -86,9 +86,8 @@ install *.py $RPM_BUILD_ROOT%{py3_sitescriptdir}/simplexml/
 
 %if %{with python3}
 2to3-3.3 -w -n $RPM_BUILD_ROOT%{py3_sitescriptdir}
-%py_ocomp $RPM_BUILD_ROOT%{py3_sitescriptdir}
-%py_comp $RPM_BUILD_ROOT%{py3_sitescriptdir}
-%py_postclean
+%py3_ocomp $RPM_BUILD_ROOT%{py3_sitescriptdir}
+%py3_comp $RPM_BUILD_ROOT%{py3_sitescriptdir}
 %endif
 
 %clean

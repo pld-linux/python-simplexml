@@ -6,7 +6,7 @@ Summary:	Simplexml in Python
 Summary(pl.UTF-8):	simplexml w Pythonie
 Name:		python-%{module}
 Version:	0.6.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://www.fit.vutbr.cz/~smrcka/projects/simplexml/%{module}-%{version}.tar.gz
@@ -68,14 +68,14 @@ Python 2.x version.
 %install
 rm -rf $RPM_BUILD_ROOT
 %if %{with python2}
-install -d $RPM_BUILD_ROOT{%{py_sitescriptdir},%{_bindir}}
-install simplexml.py $RPM_BUILD_ROOT%{py_sitescriptdir}
+install -d $RPM_BUILD_ROOT{%{py_sitescriptdir}/simplexml,%{_bindir}}
+install *.py $RPM_BUILD_ROOT%{py_sitescriptdir}/simplexml/
 install simplexml $RPM_BUILD_ROOT%{_bindir}
 %endif
 
 %if %{with python3}
-install -d $RPM_BUILD_ROOT%{py3_sitescriptdir}
-install simplexml.py $RPM_BUILD_ROOT%{py3_sitescriptdir}
+install -d $RPM_BUILD_ROOT%{py3_sitescriptdir}/simplexml
+install *.py $RPM_BUILD_ROOT%{py3_sitescriptdir}/simplexml/
 %endif
 
 %if %{with python2}
@@ -99,11 +99,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_bindir}/simplexml
-%{py_sitescriptdir}/simplexml*
+%dir %{py_sitescriptdir}/simplexml
+%{py_sitescriptdir}/simplexml/*
 %endif
 
 %if %{with python3}
 %files -n python3-%{module}
 %defattr(644,root,root,755)
-%{py3_sitescriptdir}/simplexml*
+%dir %{py3_sitescriptdir}/simplexml
+%{py3_sitescriptdir}/simplexml/*
 %endif

@@ -5,12 +5,12 @@
 Summary:	Simplexml in Python
 Summary(pl.UTF-8):	simplexml w Pythonie
 Name:		python-%{module}
-Version:	0.6.1
-Release:	3
+Version:	0.6.5
+Release:	1
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://www.fit.vutbr.cz/~smrcka/projects/simplexml/%{module}-%{version}.tar.gz
-# Source0-md5:	79c9bd31ac4179189700daa4f40c24b1
+# Source0-md5:	a150742499c483a38267a885dca4f245
 URL:		http://www.fit.vutbr.cz/~smrcka/projects/simplexml
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
@@ -85,7 +85,7 @@ install *.py $RPM_BUILD_ROOT%{py3_sitescriptdir}/simplexml/
 %endif
 
 %if %{with python3}
-2to3-3.3 -w -n $RPM_BUILD_ROOT%{py3_sitescriptdir}
+2to3 -w -n $RPM_BUILD_ROOT%{py3_sitescriptdir}
 %py3_ocomp $RPM_BUILD_ROOT%{py3_sitescriptdir}
 %py3_comp $RPM_BUILD_ROOT%{py3_sitescriptdir}
 %endif

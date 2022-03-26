@@ -6,7 +6,7 @@ Summary:	Simplexml in Python
 Summary(pl.UTF-8):	simplexml w Pythonie
 Name:		python-%{module}
 Version:	0.6.5
-Release:	4
+Release:	5
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://www.fit.vutbr.cz/~smrcka/projects/simplexml/%{module}-%{version}.tar.gz
